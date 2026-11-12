@@ -5,7 +5,7 @@ Clients sign up, buy credits or subscribe to Pro, and generate graphic elements
 saved to their private gallery.
 
 **Built with:** Next.js · Supabase (logins, database, image storage) · Stripe
-(payments) · OpenAI image API · hosted on Vercel.
+(payments) · OpenAI image API (`gpt-image-2.6-sunburst`) · hosted on Vercel.
 
 ## Prices and credits
 
@@ -13,9 +13,9 @@ All in `lib/pricing.js` — change them there.
 
 | | Credits | Price |
 |---|---|---|
-| Draft image (4 options) | 1 | — |
+| Draft image (4 options) | 3 | — |
 | Standard image (4 options) | 8 | — |
-| High image (4 options) | 30 | — |
+| High image (4 options) | 12 | — |
 | 1 Standard image | 8 | $1.50 |
 | 10 Standard images | 80 | $8 |
 | 25 Standard images | 200 | $18 |

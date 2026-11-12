@@ -71,7 +71,7 @@ export async function POST(req) {
   try {
     const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
     const result = await openai.images.generate({
-      model: process.env.OPENAI_IMAGE_MODEL || 'gpt-image-2',
+      model: process.env.OPENAI_IMAGE_MODEL || 'gpt-image-2.6-sunburst',
       prompt: buildPrompt({
         prompt,
         kind,
