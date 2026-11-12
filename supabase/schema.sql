@@ -49,6 +49,17 @@ create index if not exists generations_user_created on public.generations (user_
 create index if not exists images_user_created on public.images (user_id, created_at desc);
 
 -- ─────────────────────────────────────────────
+-- Table access for the Data API (works whether or not the project
+-- "automatically exposes new tables"). Logged-in users can only read;
+-- anonymous visitors get nothing; the server key can do everything.
+-- ─────────────────────────────────────────────
+revoke all on public.profiles, public.credit_ledger, public.generations, public.images from anon;
+grant select on public.profiles, public.credit_ledger, public.generations, public.images to authenticated;
+revoke insert, update, delete on public.profiles, public.credit_ledger, public.generations, public.images from authenticated;
+grant all on public.profiles, public.credit_ledger, public.generations, public.images to service_role;
+grant usage, select on sequence public.credit_ledger_id_seq to service_role;
+
+-- ─────────────────────────────────────────────
 -- Row level security: clients can only READ their own rows.
 -- All writes (credits, images) happen on the server with the service key,
 -- so nobody can give themselves free credits from the browser.
