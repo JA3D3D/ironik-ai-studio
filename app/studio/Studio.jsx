@@ -189,7 +189,7 @@ export default function Studio({ initialTab, purchase }) {
             ))}
           </nav>
           <button type="button" className="btn" style={{ borderRadius: 999 }} onClick={() => setTab('credits')}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF8A33" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" /></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF2D95" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" /></svg>
             {credits} credits
           </button>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -221,7 +221,7 @@ export default function Studio({ initialTab, purchase }) {
                 <label className="label" htmlFor="prompt">What do you want?</label>
                 <textarea id="prompt" className="input" rows={4} maxLength={1000} value={prompt} onChange={(e) => { setPrompt(e.target.value); setError(''); }} placeholder="e.g. A bold coffee bean badge with a mountain outline, two colors" />
                 <label style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 14, color: 'var(--text-2)', minHeight: 44, cursor: 'pointer' }}>
-                  <input type="checkbox" checked={useBrand} onChange={() => setUseBrand(!useBrand)} style={{ width: 18, height: 18, accentColor: '#FF8A33' }} />
+                  <input type="checkbox" checked={useBrand} onChange={() => setUseBrand(!useBrand)} style={{ width: 18, height: 18, accentColor: '#FF2D95' }} />
                   <span>Use my brand colors{profile && !profile.brand_colors ? ' (add them under Account)' : ''}</span>
                 </label>
               </div>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { PACKS, PRO, QUALITY, money } from '@/lib/pricing';
 
 const Check = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF8A33" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flex: 'none', marginTop: 2 }}>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF2D95" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flex: 'none', marginTop: 2 }}>
     <path d="M20 6 9 17l-5-5" />
   </svg>
 );
@@ -53,13 +53,13 @@ export default function Home() {
             <Link className="btn btn-lg" href="/login" style={{ marginTop: 'auto', borderColor: 'var(--text)' }}>Create free account</Link>
           </div>
 
-          <div className="card" style={{ padding: 32, display: 'flex', flexDirection: 'column', gap: 20, background: '#1e1915', border: '2px solid var(--accent)' }}>
+          <div className="card" style={{ padding: 32, display: 'flex', flexDirection: 'column', gap: 20, background: '#1A0A13', border: '2px solid var(--accent)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12 }}>
               <div>
                 <h2 style={{ fontSize: 24 }}>Pro</h2>
                 <p style={{ margin: '4px 0 0', color: '#c9c7ce' }}>For brands that create every month.</p>
               </div>
-              <span className="pill" style={{ alignSelf: 'flex-start', background: 'var(--accent)', color: '#141414' }}>Most popular</span>
+              <span className="pill" style={{ alignSelf: 'flex-start', background: 'var(--accent)', color: '#000000' }}>Most popular</span>
             </div>
             <div><span style={{ font: '700 48px var(--display)' }}>{money(PRO.cents)}</span> <span style={{ color: '#c9c7ce' }}>/ month</span></div>
             <ul style={listStyle}>
