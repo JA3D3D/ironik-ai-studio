@@ -22,7 +22,7 @@ export default function Home() {
     <>
       <header className="topbar">
         <div className="wrap" style={{ justifyContent: 'space-between' }}>
-          <span className="brand">IRONIK GRAFIX</span>
+          <span className="brand"><img src="/logo-white.png" alt="Ironik Grafix" style={{ height: 28, width: "auto", display: "block" }} /></span>
           <Link className="btn" href="/login">Client login</Link>
         </div>
       </header>

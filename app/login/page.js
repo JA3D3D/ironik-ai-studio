@@ -29,7 +29,7 @@ export default function LoginPage() {
   return (
     <main className="wrap" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <div className="card" style={{ width: '100%', maxWidth: 420, padding: 32, display: 'flex', flexDirection: 'column', gap: 20 }}>
-        <Link href="/" className="brand">IRONIK GRAFIX</Link>
+        <Link href="/" className="brand"><img src="/logo-white.png" alt="Ironik Grafix" style={{ height: 28, width: "auto", display: "block" }} /></Link>
         <div>
           <h1 style={{ fontSize: 26 }}>Log in or create an account</h1>
           <p className="muted" style={{ margin: '6px 0 0', fontSize: 14 }}>

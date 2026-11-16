@@ -178,7 +178,7 @@ export default function Studio({ initialTab, purchase }) {
       <header className="topbar">
         <div className="wrap">
           <div>
-            <span className="brand">IRONIK GRAFIX</span>
+            <span className="brand" style={{ display: "inline-block", verticalAlign: "middle" }}><img src="/logo-white.png" alt="Ironik Grafix" style={{ height: 28, width: "auto", display: "block" }} /></span>
             <span className="brand-sub">AI Studio</span>
           </div>
           <nav className="tabs" aria-label="Studio sections">
