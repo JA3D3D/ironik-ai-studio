@@ -360,7 +360,7 @@ export default function Studio({ initialTab, purchase }) {
                 return (
                   <div key={id} className="card" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                     <span style={{ font: '700 28px var(--display)' }}>{images} Standard {images === 1 ? 'image' : 'images'}</span>
-                    <span style={{ fontSize: 14, color: 'var(--text-2)' }}>{p.credits} credits · {money(Math.round(p.cents / images))} per image</span>
+                    <span style={{ fontSize: 14, color: 'var(--text-2)' }}>{p.credits} credits</span>
                     <button type="button" className="btn btn-primary" style={{ marginTop: 'auto', minHeight: 48 }} onClick={() => buy(id)} disabled={busyItem === id}>
                       {busyItem === id ? 'Opening checkout…' : `Buy ${money(p.cents)}`}
                     </button>
