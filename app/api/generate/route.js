@@ -2,10 +2,16 @@ import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { createClient } from '@/lib/supabase/server';
 import { createAdminClient } from '@/lib/supabase/admin';
-import { DAILY_GENERATION_LIMIT, IMAGES_PER_GENERATION, KINDS, QUALITY } from '@/lib/pricing';
+import { DAILY_GENERATION_LIMIT, IMAGES_PER_GENERATION, KINDS, MODELS, QUALITY } from '@/lib/pricing';
 
 // High-quality sets of 4 can take a while.
 export const maxDuration = 120;
+
+function modelFor(quality) {
+  const which = QUALITY[quality].model; // 'draft' or 'final'
+  if (which === 'draft') return process.env.OPENAI_DRAFT_MODEL || MODELS.draft;
+  return process.env.OPENAI_FINAL_MODEL || process.env.OPENAI_IMAGE_MODEL || MODELS.final;
+}
 
 function buildPrompt({ prompt, kind, brandColors, businessName }) {
   const parts = [`Create ${KINDS[kind].guide}.`, `Client request: ${prompt}`];
@@ -71,7 +77,7 @@ export async function POST(req) {
   try {
     const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
     const result = await openai.images.generate({
-      model: process.env.OPENAI_IMAGE_MODEL || 'gpt-image-2.6-sunburst',
+      model: modelFor(quality),
       prompt: buildPrompt({
         prompt,
         kind,
