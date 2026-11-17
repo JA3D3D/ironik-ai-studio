@@ -16,9 +16,9 @@ All in `lib/pricing.js` — change them there.
 | Draft image (4 options) | 3 | — |
 | Standard image (4 options) | 8 | — |
 | High image (4 options) | 12 | — |
-| 1 Standard image | 8 | $1.50 |
-| 10 Standard images | 80 | $8 |
-| 25 Standard images | 200 | $18 |
+| 1 Standard image | 8 | $1 |
+| 10 Standard images | 80 | $5 |
+| 25 Standard images | 200 | $12 |
 | Pro plan | 100 / month | $29 / month |
 
 Safety: each client is limited to 40 generations a day, and if the AI fails
